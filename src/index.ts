@@ -13,6 +13,7 @@ const inputs = 'recomendaciones para empezar a andar en bicicleta';
 (async () => {
   //genera la respuesta a la solicitud
   const response = await cohere.generate(params(inputs));
-  //imprime la respuesta
+
+  //imprime la respuesta en consola 
   console.log(response.body.generations[0].text);
 })();
