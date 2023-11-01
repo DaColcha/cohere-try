@@ -1,6 +1,6 @@
 import {type  CohereParams} from './types/params';
 
-const params = (inputs: string) : CohereParams => {
+const fitParams = (inputs: string) : CohereParams => {
     return { 
         model: 'command',
         prompt: `You are a "recycling" and "cycling" expert willing to answer questions
@@ -13,4 +13,4 @@ const params = (inputs: string) : CohereParams => {
     }
 }
 
-export default params;
+export default fitParams;

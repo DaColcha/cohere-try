@@ -1,4 +1,4 @@
-import params  from './params';
+import fitParams  from './params';
 
 const cohere = require('cohere-ai');
 cohere.init('tPgdL0VP7EbnQiEkymbVuZto6DQlGHDNzq3HnYTh'); 
@@ -12,7 +12,7 @@ const inputs = 'recomendaciones para empezar a andar en bicicleta';
 
 (async () => {
   //genera la respuesta a la solicitud
-  const response = await cohere.generate(params(inputs));
+  const response = await cohere.generate(fitParams(inputs));
 
   //imprime la respuesta en consola 
   console.log(response.body.generations[0].text);
