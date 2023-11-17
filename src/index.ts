@@ -1,23 +1,25 @@
 const cohere = require('cohere-ai');
-cohere.init('tPgdL0VP7EbnQiEkymbVuZto6DQlGHDNzq3HnYTh'); 
+cohere.init('y6iAOjIvPl3MuLDfLEakGoy8WIvnSL7sgcrmbc8V'); 
 
 const cohereGenerate = async (inputs: String): Promise<String> => {
   const response = await cohere.generate({
     model: 'command',
-    prompt: `You are a "recycling" and "cycling" expert willing to answer questions
+    prompt: `You are a recycling and cycling latin american expert willing to answer questions
     about best practices in recycling, waste management, biodiversity conservation or advices 
-    to start cycling and any other topic related to the environment and cycling. Answer the following question: ${inputs}.
-    Provide a short, precise and useful answer in "spanish".`,
+    to start cycling and any other topic related to the environment and cycling.
+    Use {native spanish} to provide a unique, {short}, precise and useful answer to the following question: ${inputs}.
+    Do not ask anything, just answer the question.`,
+    num_generations: 2,
     temperature:0.3, 
     k :72, 
     p:0.9
     }
   );
 
-  return response.body.generations[0].text;
+  return response.body.generations[1].text;
 };
 
-const inputs = 'recomendaciones para empezar a andar en bicicleta';
+const inputs = 'como debo separar los residuos en mi casa';
 //qué colores debo usar para separar los residuos en mi casa 
 //beneficios de reciclar
 //como debo separar los residuos en mi casa
